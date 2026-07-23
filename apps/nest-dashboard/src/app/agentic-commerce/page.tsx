@@ -1,3 +1,4 @@
+import { ImagePlaceholder } from "@/components/image-placeholder";
 import { agenticCommerceEvent as event } from "@/lib/agentic-commerce-event";
 
 export const metadata = {
@@ -5,46 +6,28 @@ export const metadata = {
   description: event.tagline,
 };
 
-function SponsorTier({ label, names }: { label: string; names: readonly string[] }) {
-  return (
-    <div>
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300">
-        {label}
-      </p>
-      <ul className="mt-3 space-y-1.5">
-        {names.map((name) => (
-          <li key={name} className="font-display text-[1.05rem] text-ink-900">
-            {name}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 export default function AgenticCommercePage() {
   return (
     <div className="bg-cream-100">
       {/* HERO */}
       <section className="relative paper-texture">
-        <div className="relative mx-auto max-w-[1240px] px-6 sm:px-10 pt-20 pb-20 md:pt-24 md:pb-24">
-          <p className="eyebrow">
-            {event.dates} &middot; {event.format}
-          </p>
-          <h1 className="font-display mt-5 max-w-[24ch] text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.06] tracking-[-0.016em] text-ink-900">
-            {event.name}
-          </h1>
-          <p className="mt-6 max-w-2xl text-[1.12rem] leading-[1.65] text-ink-600">
-            {event.tagline} Project NANDA is a partner in this hackathon,
-            hosted on Devfolio.
-          </p>
-          <div className="mt-8">
-            <a
-              href={event.applyUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary"
-            >
+        <div className="relative mx-auto max-w-[1240px] px-6 sm:px-10 pt-16 pb-16 md:pt-20 md:pb-20">
+          <h1 className="sr-only">{event.name}</h1>
+          <a href={event.applyUrl} target="_blank" rel="noreferrer" className="block transition-opacity hover:opacity-90">
+            <ImagePlaceholder
+              id="01"
+              ratio="16/9"
+              prompt={event.tagline}
+              src="/agentic-commerce/hero.jpg"
+              alt={`${event.name} — ${event.dates}, ${event.format}. ${event.tagline}`}
+              priority
+            />
+          </a>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400">
+              {event.dates} &middot; {event.format}
+            </p>
+            <a href={event.applyUrl} target="_blank" rel="noreferrer" className="btn-primary">
               Apply on Devfolio &rarr;
             </a>
           </div>
@@ -142,18 +125,6 @@ export default function AgenticCommercePage() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SPONSORS */}
-      <section className="border-t border-cream-400/70 bg-cream-50">
-        <div className="mx-auto max-w-[1240px] px-6 sm:px-10 py-20 md:py-24">
-          <p className="eyebrow">Sponsors</p>
-          <div className="mt-8 grid gap-8 sm:grid-cols-3">
-            <SponsorTier label="Official" names={event.sponsors.official} />
-            <SponsorTier label="Track" names={event.sponsors.track} />
-            <SponsorTier label="Partners" names={event.sponsors.partners} />
           </div>
         </div>
       </section>

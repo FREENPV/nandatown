@@ -45,9 +45,4 @@ export const agenticCommerceEvent = {
     { name: "Josh Flayhart", affiliation: "Linq, Staff Engineer" },
     { name: "Ujwal Chaudhari", affiliation: "Visa, Product" },
   ],
-  sponsors: {
-    official: ["OpenAI", "Visa"],
-    track: ["Linq", "Localhost"],
-    partners: ["Project NANDA", "Senso"],
-  },
 } as const;
