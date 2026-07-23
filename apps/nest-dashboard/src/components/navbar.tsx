@@ -29,6 +29,7 @@ const items: NavItem[] = [
         label: "NandaHack x HCLTech",
       },
       { href: "/skills", label: "Skills Registry" },
+      { href: "/agentic-commerce", label: "Agentic Commerce Hackathon" },
     ],
   },
 ];
