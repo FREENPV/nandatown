@@ -39,6 +39,23 @@ export const agenticCommerceEvent = {
       { sponsor: "Senso", amount: "$7,500" },
     ],
   },
+  pravaTrack: {
+    title: "Best Prava Adapter for NANDA Town",
+    prize: "$1,000",
+    summary:
+      "The primary challenge is to build a reliable and reusable Prava payments adapter for NANDA Town, enabling agents to quote, pay, verify transactions, and handle failures using Prava's Agentic Payments Sandbox.",
+    stretch:
+      "Teams can go further by using their adapter to run commerce simulations involving autonomous buyers, sellers, negotiations, budgets, retries, and other real-world payment conditions.",
+    criteria: [
+      "Quality and reliability of the adapter",
+      "Security, authorization, and failure handling",
+      "Ease of installation and reuse",
+      "Successful Prava sandbox transactions",
+      "Quality of any agentic-commerce scenarios or simulations built on top",
+    ],
+    closing:
+      "The strongest submission should make it easy for future NANDA Town builders to use Prava as a payment layer.",
+  },
   judges: [
     { name: "Prof. Ramesh Raskar", affiliation: "MIT Media Labs, Project NANDA founder" },
     { name: "Justin Leung", affiliation: "Visa, Agentic Commerce Principal" },

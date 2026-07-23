@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-type NavChild = { href: string; label: string };
+type NavChild = { href: string; label: string; sub?: boolean };
 type NavItem = {
   href: string;
   label: string;
@@ -28,7 +28,7 @@ const items: NavItem[] = [
         href: "https://nandahack.media.mit.edu",
         label: "NandaHack x HCLTech",
       },
-      { href: "/skills", label: "Skills Registry" },
+      { href: "/skills", label: "Skills Registry", sub: true },
       {
         href: "/agentic-commerce",
         label: "NandaHack x Prava: Agentic Commerce Hackathon",
@@ -76,7 +76,10 @@ function NavList({
                     childActive ? "bg-cream-200 text-ink-900" : "text-ink-400 hover:bg-cream-200/60 hover:text-ink-900"
                   }`;
                   return (
-                    <li key={child.href}>
+                    <li
+                      key={child.href}
+                      className={child.sub ? "ml-3 border-l border-cream-400/60 pl-2" : undefined}
+                    >
                       {child.href.startsWith("http") ? (
                         <a
                           href={child.href}

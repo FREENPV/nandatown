@@ -98,7 +98,7 @@ export default async function SkillsPage({
         <div className="relative mx-auto max-w-[1240px] px-6 pt-20 pb-16 sm:px-10 md:pt-24">
           <div className="mb-8 flex items-center gap-3">
             <span className="inline-flex h-1.5 w-1.5 rounded-full bg-rust" />
-            <span className="eyebrow">SkillMD registry · NandaHack</span>
+            <span className="eyebrow">SkillMD registry · NandaHack x HCLTech</span>
           </div>
           <h1 className="max-w-3xl font-display text-[clamp(2.4rem,5.5vw,4.2rem)] leading-[1.04] tracking-[-0.018em] text-ink-900">
             Teach an agent a <span className="italic text-ink-700">new trick.</span>
@@ -141,8 +141,7 @@ export default async function SkillsPage({
                   Audience Choice Award · $1,000 · SkillMD only
                 </p>
                 <p className="mt-2.5 text-[0.95rem] leading-[1.6] text-ink-600">
-                  Voting has been extended to run a full month, through August 11,
-                  2026. The award covers the submissions marked{" "}
+                  Voting has been extended through September 25, 2026. The award covers the submissions marked{" "}
                   <span className="font-semibold text-rust">NandaHack entry</span>,
                   the SkillMDs submitted by the July 11 hackathon deadline.
                   Newer submissions join the registry but are not in the award

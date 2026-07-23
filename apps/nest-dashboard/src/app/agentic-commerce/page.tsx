@@ -63,6 +63,42 @@ export default function AgenticCommercePage() {
         </div>
       </section>
 
+      {/* PROJECT NANDA TRACK — Best Prava Adapter */}
+      <section className="border-t border-cream-400/70">
+        <div className="mx-auto max-w-[1240px] px-6 sm:px-10 py-20 md:py-24">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+            <div>
+              <p className="eyebrow">Project NANDA track &middot; {event.pravaTrack.prize}</p>
+              <h2 className="font-display mt-5 text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.08] tracking-[-0.015em] text-ink-900">
+                {event.pravaTrack.title}
+              </h2>
+            </div>
+            <div className="lg:pt-2">
+              <p className="text-[1.02rem] leading-[1.7] text-ink-600">
+                {event.pravaTrack.summary}
+              </p>
+              <p className="mt-4 text-[1.02rem] leading-[1.7] text-ink-600">
+                {event.pravaTrack.stretch}
+              </p>
+              <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-400">
+                Submissions are evaluated on
+              </p>
+              <ul className="mt-3 space-y-2">
+                {event.pravaTrack.criteria.map((c) => (
+                  <li key={c} className="flex gap-3 text-[0.98rem] leading-[1.6] text-ink-600">
+                    <span className="mt-[0.55em] h-px w-4 shrink-0 bg-rust" />
+                    {c}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-[1.02rem] leading-[1.7] text-ink-600">
+                {event.pravaTrack.closing}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* WHAT TO BUILD */}
       <section className="border-t border-cream-400/70">
         <div className="mx-auto max-w-[1240px] px-6 sm:px-10 py-20 md:py-24">
