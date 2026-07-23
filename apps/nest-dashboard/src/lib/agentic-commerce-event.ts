@@ -12,7 +12,7 @@ export const agenticCommerceEvent = {
     "Build AI agents that can discover, decide, and complete transactions.",
   dates: "July 31 – August 2, 2026",
   format: "Online, 48-hour event",
-  applyUrl: "https://agentic-commerce.devfolio.co/overview",
+  applyUrl: "https://agentic-commerce.devfolio.co/prizes?partner=Project+Nanda",
   keyTech:
     "Prava is a payments and trust layer that lets AI agents make purchases, available via API/SDK or MCP & CLI.",
   theme:
