@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ImagePlaceholder } from "@/components/image-placeholder";
 import { agenticCommerceEvent as event } from "@/lib/agentic-commerce-event";
 
@@ -27,9 +28,14 @@ export default function AgenticCommercePage() {
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400">
               {event.dates} &middot; {event.format}
             </p>
-            <a href={event.applyUrl} target="_blank" rel="noreferrer" className="btn-primary">
-              Apply on Devfolio &rarr;
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a href={event.applyUrl} target="_blank" rel="noreferrer" className="btn-primary">
+                Apply on Devfolio &rarr;
+              </a>
+              <a href="#submit" className="btn-secondary">
+                How to submit &rarr;
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -95,6 +101,55 @@ export default function AgenticCommercePage() {
                 {event.pravaTrack.closing}
               </p>
             </div>
+          </div>
+
+          <div id="submit" className="mt-12 scroll-mt-24 rounded-2xl border border-rust/40 bg-rust/[0.06] p-7 sm:p-10">
+            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-rust">
+              How to submit
+            </p>
+            <p className="mt-3 max-w-2xl text-[1.02rem] leading-[1.65] text-ink-700">
+              Both parts are required for this track: the pull request and the
+              Devfolio submission.
+            </p>
+            <ol className="mt-6 ml-5 max-w-3xl list-decimal space-y-4 text-[1.02rem] leading-[1.7] text-ink-600 marker:font-mono marker:text-rust">
+              <li>
+                <span className="font-semibold text-ink-900">Build the adapter as a Nanda Town payments-layer plugin.</span>{" "}
+                The payments layer covers quote, pay, verify, and refund. Follow
+                the{" "}
+                <Link href="/docs" className="text-rust underline decoration-rust/40 underline-offset-4 hover:decoration-rust">
+                  Writing a plugin guide
+                </Link>{" "}
+                in the docs.
+              </li>
+              <li>
+                <span className="font-semibold text-ink-900">Connect it to Prava&rsquo;s Agentic Payments Sandbox.</span>{" "}
+                Show at least one successful sandbox transaction in a scenario
+                run. Include the scenario and a test, and handle at least one
+                failure case.
+              </li>
+              <li>
+                <span className="font-semibold text-ink-900">Open a pull request to{" "}
+                <a href="https://github.com/projnanda/nandatown" target="_blank" rel="noreferrer" className="text-rust underline decoration-rust/40 underline-offset-4 hover:decoration-rust">
+                  github.com/projnanda/nandatown
+                </a>.</span>{" "}
+                It should carry the plugin, the scenario and test, and a README
+                that explains installation and reuse. Your pull request shows up
+                in the{" "}
+                <Link href="/prgallery/layers/payments" className="text-rust underline decoration-rust/40 underline-offset-4 hover:decoration-rust">
+                  Payments layer
+                </Link>{" "}
+                of the PR gallery.
+              </li>
+              <li>
+                <span className="font-semibold text-ink-900">Submit your project on{" "}
+                <a href={event.applyUrl} target="_blank" rel="noreferrer" className="text-rust underline decoration-rust/40 underline-offset-4 hover:decoration-rust">
+                  Devfolio
+                </a>{" "}
+                as your official hackathon entry.</span>{" "}
+                Link your pull request in the Devfolio submission so the judges
+                can find the code.
+              </li>
+            </ol>
           </div>
         </div>
       </section>
