@@ -30,7 +30,7 @@ const items: NavItem[] = [
       },
       { href: "/skills", label: "Skills Registry", sub: true },
       {
-        href: "/agentic-commerce",
+        href: "/pravahack",
         label: "NandaHack x Prava: Agentic Commerce Hackathon",
       },
     ],
