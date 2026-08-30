@@ -131,4 +131,26 @@ audit the first and never the second, so a whole class of settlement failure
 lives in the blind spot — inventory committed against payment that never
 happens, with a green board.
 
-That is not an argument against validators; `all_responded` was 
+That is not an argument against validators; `all_responded` was still the only
+signal that fired at all, and it is what sent me looking. It is an argument
+that a validator over a marketplace has to reconcile both sides of every
+exchange, not just the outbound half.
+
+## Reproduce
+
+```bash
+nest run scenarios/marketplace_byzantine.yaml
+python -c "from pathlib import Path; from nest_core.validators import validate_trace; [print('PASS' if r.passed else 'FAIL', r.name, '-', r.detail) for r in validate_trace(Path('traces/marketplace_byzantine.jsonl'),'marketplace')]"
+python docs/assessments/marketplace-byzantine/investigate.py traces/marketplace_byzantine.jsonl
+```
+
+## Tools and help
+
+Claude Code (Opus 5), working in a terminal on my own machine. I ran every
+command myself and read every output. I chose the setting, wrote the prediction
+before running, and was wrong about two of four calls. Claude Code found the
+`send`-only line in `validators.py` when I asked why the numbers didn't
+reconcile, and wrote `investigate.py` once I understood what comparison was
+missing. NANDA Town Quickstart for the CLI; `nest_core` source
+(`validators.py`, `simulator.py`, `scenarios_builtin/marketplace.py`) read
+directly. No human help.
